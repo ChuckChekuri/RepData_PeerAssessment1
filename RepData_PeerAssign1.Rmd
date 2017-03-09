@@ -16,7 +16,7 @@ This report is an exercise in literate statistical programming using knittr. The
 
 ## Loading and preprocessing the data
 ```{r downloadandread, echo=TRUE}
-setwd("~/GitHub/RepData_PeerAssessment1")
+# setwd("~/GitHub/RepData_PeerAssessment1")
 data <- read.csv("activity.csv")
 
 data$date <- as.POSIXct(strptime(data$date,'%Y-%m-%d'))
