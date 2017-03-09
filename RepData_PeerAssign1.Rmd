@@ -115,6 +115,7 @@ The difference in median steps when missing values are filled is: `r median_step
 The mean is the same becuase the missing values were filled with the mean. The median sees a small change.
 
 ### Are there differences in activity patterns between weekdays and weekends?
+
 ```{r }
 ####1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 all_rows_filled$day <- as.factor(ifelse(weekdays(all_rows_filled$date) %in% c("Saturday", "Sunday"), "weekend", "weekday"))
@@ -127,3 +128,4 @@ qplot(x=interval, y=ave_steps, data=intvl_steps, facets=day~., geom=c("line"),xl
 
 ```
 
+-----
