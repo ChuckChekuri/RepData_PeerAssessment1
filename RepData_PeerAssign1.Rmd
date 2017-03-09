@@ -33,7 +33,7 @@ median_steps <- round(median(daily_steps$total),0)
 
 # 1. Make a histogram of the total number of steps taken each day
 
-plot(x=daily_steps$date, y=daily_steps$total,type="h",col=4, xlab="Date", ylab="No. of Steps", main="Total Number of Stpes Taken Each Day")
+hist(daily_steps$total, breaks=15, col=4, xlab="Num of Steps", ylab="Frequency", main="Total Number of Stpes Taken Each Day")
 
 
 #2. Calculate and report the **mean** and **median** total number of steps taken per day
@@ -102,7 +102,8 @@ daily_steps_filled <- all_rows_filled %>% filter(!is.na(steps)) %>%
 	summarize(total = sum(steps))
 mean_steps_filled <- round(mean(daily_steps_filled$total),0)
 median_steps_filled <- median(daily_steps_filled$total)
-plot(x=daily_steps_filled$date, y=daily_steps_filled$total,type="h",col=4, xlab="Date", ylab="No. of Steps", main="Total Number of Stpes Taken Each Day")
+hist(daily_steps_filled$total,breaks=15,col=4, xlab="Number of Steps",
+     ylab="Frequency", main="Total Number of Stpes Taken Each Day")
 
 summary(daily_steps);
 summary(daily_steps_filled)
